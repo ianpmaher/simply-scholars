@@ -2,8 +2,8 @@
 import { Karla, Josefin_Sans } from "next/font/google";
 // import { Hedvig_Letters_Serif } from "next/font/google";
 import "./globals.css";
-import Header from "../_components/shared/Header";
-import Footer from "../_components/shared/Footer";
+import Header from "../components/shared/Header";
+import Footer from "../components/shared/Footer";
 
 // const inter = Inter({ subsets: ['latin'] })
 const karla = Karla({ subsets: ["latin"], display: "swap" });

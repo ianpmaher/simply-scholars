@@ -1,6 +1,6 @@
 // import Image from "next/image";
-import Hero from "../_components/Hero";
-import JsonTest from "../_components/JsonTest";
+import Hero from "../components/Hero";
+import JsonTest from "../components/JsonTest";
 
 export default function Home() {
     return (
