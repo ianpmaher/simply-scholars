@@ -1,13 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Hero = (props) => {
+const Hero = ({className}) => {
     return (
-        <section className="hero">
-            <div>
+        <section className="flex justify-around align-center">
+            {/* <div className="m-0 rounded flex "> */}
                 {/* background image for hero */}
-                <img src="https://pbs.twimg.com/profile_images/1605297940242669568/q8-vPggS_400x400.jpg" width="100" height="100" alt="" /> 
-            </div>
+            {/* </div> */}
             <div>
                 <h1>Hero</h1>
                 <p>Hero text</p>

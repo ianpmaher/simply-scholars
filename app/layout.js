@@ -4,6 +4,8 @@ import { Karla, Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer";
+import Navbar from "../components/shared/Navbar";
+import Sidebar from "../components/shared/Sidebar";
 
 // const inter = Inter({ subsets: ['latin'] })
 const karla = Karla({ subsets: ["latin"], display: "swap" });
@@ -18,9 +20,16 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={karla.className}>
-                <Header />
-                {children}
-                {/* <Footer /> */}
+                <div className="min-h-screen flex flex-col">
+                    <Header />
+                    <div className="flex flex-1 flex-col sm:flex-row">
+                        <Navbar className="order-first sm:w-30 bg-green-400 flex flex-col justify-start items-center p-1" />
+                        <main className="flex-1 bg-blue-300 p-1">{children}</main>
+                        <Sidebar className="sm:w-30 bg-red-100 p-1" />
+                    </div>
+                    
+                    <Footer className="bg-orange-300 p-1" />
+                </div>
             </body>
         </html>
     );

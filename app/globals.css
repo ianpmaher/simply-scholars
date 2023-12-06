@@ -16,8 +16,7 @@
     }
 }
 
-body {
+/* body {
     color: rgb(var(--foreground-rgb));
-    background: radial-gradient(circle, transparent, blue 50%, rgb(var(--background-end-rgb)))
-        rgb(var(--background-start-rgb));
-}
+    background: radial-gradient(circle, black 1%, gray 20%);
+} */

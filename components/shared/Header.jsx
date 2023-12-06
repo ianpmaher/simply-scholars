@@ -1,44 +1,48 @@
 "use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import Link from "next/link";
+import Image from "next/image";
+// import { usePathname } from "next/navigation";
 
-const HeaderStyle = {
-    margin: "0 auto",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-}
+// const HeaderStyle = {
+//     margin: "0 auto",
+//     display: "flex",
+//     flexDirection: "row",
+//     justifyContent: "center",
+//     alignItems: "center",
+// }
 
-const Header = () => {
-    const path = usePathname();
-    const navPaths = [
-        {
-            display: "Home",
-            slug: "/"
-        },
-        {
-            display: "About",
-            slug: "/about"
-        },
-        {
-            display: "Blog",
-            slug: "/blog"
-        }
-    ]
+const Header = (props) => {
+    // const path = usePathname();
+    // const navPaths = [
+    //     {
+    //         display: "Home",
+    //         slug: "/"
+    //     },
+    //     {
+    //         display: "Scholarships",
+    //         slug: "/scholarships"
+    //     },
+    //     {
+    //         display: "Blog",
+    //         slug: "/blog"
+    //     }
+    // ]
 
     return (
-        <header className={`header ${path === "/" ? "header--home" : ""}`} style={HeaderStyle}>
-            {/* <img src="" alt="" /> logo */}
-            <ul className="nav flex flex-row center-items gap-1">
-                {navPaths.map((navPath, item) => (
-                    <li key={item} className={`nav__item ${path === navPath.slug ? "nav__item--active" : ""}`}>
-                        <Link href={navPath.slug}>
-                            <h4 className="hover:underline">{navPath.display}</h4>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+        <header className="flex my-0 mx-auto justify-center content-center items-center">
+            <Image src={"/assets/placeholder.svg"} alt="logo" width="99" height="99" /> 
+            <h1 className="text-3xl font-bold">Scholarship Finder</h1>
+            {/* <nav className={`header ${path === "/" ? "header--home" : ""}`} style={HeaderStyle}>
+                <ul className="nav flex flex-row center-items gap-1">
+                    {navPaths.map((navPath, item) => (
+                        <li key={item} className={`nav__item ${path === navPath.slug ? "nav__item--active" : ""}`}>
+                            <Link href={navPath.slug}>
+                                <h4 className="hover:underline">{navPath.display}</h4>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav> */}
         </header>
     )
 }
