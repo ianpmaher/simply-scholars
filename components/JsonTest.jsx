@@ -18,7 +18,7 @@ export default async function JsonTest() {
                 <p>${data["data"][0]["attributes"]["Value"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
             }
             
-            <p>{data["data"][0]["attributes"]["Title"]}</p>
+            <p>{data["data"][0]["attributes"]["Description"][1]["children"][0]["children"][0]["text"]}</p>
             <p>{data["data"][0]["attributes"]["Title"]}</p>
         </div>
     );
