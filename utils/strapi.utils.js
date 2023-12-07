@@ -15,3 +15,28 @@ export async function fetchDataStrapi(route) {
     }
 }
 
+// TODO: NIGHTMARE TO UNTANGLE RICH TEXT OF DESCRIPTION
+// description: item["Description"][],
+
+export function processScholarship(data) {
+    const rawData = Array.from(data);
+    console.log(rawData)
+    return rawData.map((item) => ({
+        ...rawData.attributes,
+        id: item.id,
+        title: item["Title"],
+        value: item["Value"],
+        deadline: item["Deadline"],
+        isActive: item.isActive,
+        // publishedAt: item.publishedAt.toLocalString(),
+    }));
+    // return rawData.map((item) => ({
+    //     ...rawData.attributes,
+    //     id: item.id,
+    //     title: item["Title"],
+    //     value: item["Value"],
+    //     deadline: item["Deadline"],
+    //     isActive: item.isActive,
+    //     publishedAt: item.publishedAt.toLocalString(),
+    // }));
+}

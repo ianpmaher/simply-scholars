@@ -9,7 +9,7 @@ export default async function JsonTest() {
     }
 
     return (
-        <div>
+        <div style={{border: "10px dashed black"}}>
             <h1>JSON Test</h1>
             {/* THIS WORKS ACTUALLY! */}
             <p>{data["data"][0]["attributes"]["Title"]}</p>
