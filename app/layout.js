@@ -27,8 +27,7 @@ export default function RootLayout({ children }) {
                         <main className="flex-1 bg-blue-300 p-1">{children}</main>
                         <Sidebar className="sm:w-30 bg-red-100 p-1" />
                     </div>
-                    
-                    <Footer className="bg-orange-300 p-1" />
+                    <Footer className="bg-orange-300 p-1 text-center flex flex-col my-0" />
                 </div>
             </body>
         </html>

@@ -1,17 +1,25 @@
 export default async function JsonTest() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/todos/');
+    const response = await fetch('https://simply-scholars-821b524821cf.herokuapp.com/api/scholarships/');
     const data = await response.json();
     // console.log(data);
+
+    const convertNumber = (num) => {
+        num > 1000 ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 1;
+        console.log(num);
+    }
 
     return (
         <div>
             <h1>JSON Test</h1>
-            <p>{data[0].title}</p>
-            <p>{data[0].id}</p>
-            <p>{data[1].title}</p>
-            <p>{data[1].id}</p>
-            <p>{data[2].title}</p>
-            <p>{data[2].id}</p>
+            {/* THIS WORKS ACTUALLY! */}
+            <p>{data["data"][0]["attributes"]["Title"]}</p>
+            { /* function to add comma for large int in below "value" */}
+            { data["data"][0]["attributes"]["Value"] >= 1000 && 
+                <p>${data["data"][0]["attributes"]["Value"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+            }
+            
+            <p>{data["data"][0]["attributes"]["Title"]}</p>
+            <p>{data["data"][0]["attributes"]["Title"]}</p>
         </div>
     );
 }
