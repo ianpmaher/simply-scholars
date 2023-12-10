@@ -19,7 +19,7 @@ const ScholarshipBlock = (data) => {
             </h2>
             {data.pic ? <Image src={data.pic} alt="scholarship image" width="100" height="100" /> : <Skeleton />}
 
-            <ReactMarkdown className="">{fixMarkdown(data.description)}</ReactMarkdown>
+            <ReactMarkdown className="prose">{data.description}</ReactMarkdown>
         </Card>
     );
 };
