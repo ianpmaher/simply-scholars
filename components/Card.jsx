@@ -1,6 +1,10 @@
+import Skeleton from "./Skeleton";
+
 const Card = ({ children }) => {
+    
+    
     return (
-        <div className="ring-4 h-full w-3/4 flex flex-col justify-center items-center mx-auto my-0 hover:ring-8">
+        <div className="shadow-custom h-full w-3/4 flex flex-col justify-center items-center my-0 mx-auto p-1 hover:ring-8">
             {children}
         </div>
     );

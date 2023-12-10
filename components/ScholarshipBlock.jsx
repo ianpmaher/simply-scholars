@@ -1,6 +1,7 @@
 import ReactMarkDown from "react-markdown";
 import Card from "./Card";
 import Image from "next/image";
+import Skeleton from "./Skeleton";
 
 const ScholarshipBlock = async () => {
     // const { title, value, description } = data;
@@ -17,7 +18,7 @@ const ScholarshipBlock = async () => {
             </h2>
             <div>
                 <ReactMarkDown>
-                    {data["data"]["attributes"]["title"]}
+                    {data["data"]["attributes"]["description"]}
                 </ReactMarkDown>
             </div>
             <Image src={data.attributes?.pic?.data?.attributes?.url} alt="scholarship image" width="100" height="100" />
