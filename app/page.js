@@ -23,6 +23,7 @@ export default async function Home() {
                     key={data.id}
                     title={data.title}
                     value={data.value}
+                    description={data.description}
                     deadline={data.deadline}
                     isActive={data.isActive}
                     pic={data.pic}
