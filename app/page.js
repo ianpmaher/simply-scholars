@@ -1,8 +1,6 @@
 // import Image from "next/image";
 import ScholarshipBlock from "@/components/ScholarshipBlock";
 import Hero from "../components/Hero";
-import axios from "axios";
-import JsonTest from "../components/JsonTest";
 import { fetchDataStrapi, processScholarship } from "@/utils/strapi.utils";
 
 export default async function Home() {
@@ -29,8 +27,6 @@ export default async function Home() {
                     pic={data.pic}
                 />
             )) }
-            <ScholarshipBlock />
-            {/* <JsonTest /> */}
         </div>
     );
 }

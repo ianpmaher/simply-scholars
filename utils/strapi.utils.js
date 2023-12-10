@@ -25,9 +25,9 @@ export function processScholarship(data) {
         title: dataBlock.attributes.title,
         id: dataBlock.id,
         description: dataBlock.attributes.description,
-        value: dataBlock.value,
-        deadline: dataBlock.deadline,
-        isActive: dataBlock.isActive,
+        value: dataBlock.attributes.value,
+        deadline: dataBlock.attributes.deadline,
+        isActive: dataBlock.attributes.isActive,
         // below is all thanks to Nick Fis, Strapi uploads the media to a different API endpoint
         pic: BASE_URL + dataBlock.attributes?.pic?.data?.attributes?.url,
         // publishedAt: item.publishedAt.toLocalString(),
