@@ -6,9 +6,11 @@ import JsonTest from "../components/JsonTest";
 import { fetchDataStrapi, processScholarship } from "@/utils/strapi.utils";
 
 export default async function Home() {
-    // const data = await fetchDataStrapi("scholarships"); // this is SCHOLARSHIPS route
-    // const processedData = processScholarship(data);
-    
+    // home page ---  
+    // INDEX ROUTE essentially / GET ALL
+    const data = await fetchDataStrapi("scholarships-landing?populate=deep"); // this is SCHOLARSHIPS route
+    const processedData = processScholarship(data);
+    console.log("processedData", processedData);
 
     return (
         <div>
@@ -16,10 +18,17 @@ export default async function Home() {
             <article className="flex flex-col items-center justify-between p-1">
                 <h1 className="text-3xl font-bold text-center">Wow, this is a cool page!</h1>
             </article>
-            {/* <ScholarshipBlock data={processedData} /> */}
-            <ScholarshipBlock >
-                
-            </ScholarshipBlock>
+            { processedData.map((data) => (
+                <ScholarshipBlock
+                    key={data.id}
+                    title={data.title}
+                    value={data.value}
+                    deadline={data.deadline}
+                    isActive={data.isActive}
+                    pic={data.pic}
+                />
+            )) }
+            <ScholarshipBlock />
             {/* <JsonTest /> */}
         </div>
     );
