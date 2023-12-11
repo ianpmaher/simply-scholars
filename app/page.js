@@ -8,7 +8,7 @@ export default async function Home() {
     // INDEX ROUTE essentially / GET ALL
     const data = await fetchDataStrapi("scholarships-landing?populate=deep"); // this is SCHOLARSHIPS route
     const processedData = processScholarship(data);
-    console.log("processedData", processedData);
+    // console.log("processedData", processedData);
 
     return (
         <div>

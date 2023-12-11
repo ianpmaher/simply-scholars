@@ -28,6 +28,7 @@ const ScholarshipPreviewBlock = (data) => {
                 {data.deadline && <li>{formattedDeadline}</li>}
                 {data.eligibility && <li>{data.eligibility}</li>}
             </ul>
+            <Link href={`/scholarships/${data.id}`}> Learn More </Link>
             <Link href={`/scholarships/${data.slug}`}> Learn More </Link>
             {/* <ReactMarkdown className="prose">{data.description}</ReactMarkdown> */}
         </div>

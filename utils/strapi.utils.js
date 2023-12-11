@@ -39,11 +39,11 @@ export function processScholarship(data) {
 // GET one => /api/scholarships/:id //
 // ==================== //
 export async function fetchOneScholarship(id) {
-    const url = `${BASE_URL}/api/scholarships/${id}`;
-
+    const url = `${BASE_URL}/api/scholarships/${id}?populate=deep`;
+    // const url = `${BASE_URL}/api/scholarships/?sort[0]=title:asc&filters[${id}][$eq]=${id}&locale[0]=en`;
     try {
         const res = await axios.get(url);
-        return res.data.data;
+        return res.data;
     } catch (err) {
         console.error(`error: ${err}`);
         throw new Error(`Could not fetch ${url} ${err}`);
@@ -55,15 +55,16 @@ export function processOneScholarship(data) { // still need to populate DEEP for
     const rawData = data.attributes;
     return {
         ...rawData,
-        title: rawData.attributes.title,
-        id: rawData.attributes.id,
-        description: rawData.attributes.description,
-        value: rawData.attributes.value,
-        deadline: rawData.attributes.deadline,
-        isActive: rawData.attributes.isActive,
-        eligibility: rawData.attributes.eligibility,
-        pic: BASE_URL + rawData?.pic?.data?.attributes?.url,
-        publishedAt: rawData.attributes.publishedAt,
+        ...data,
+        title: rawData.title,
+        id: data.id,
+        description: rawData.description,
+        value: rawData.value,
+        deadline: rawData.deadline,
+        isActive: rawData.isActive,
+        eligibility: rawData.eligibility,
+        pic: BASE_URL + rawData?.pic.data?.attributes?.url,
+        publishedAt: rawData.publishedAt,
     };
 }
 
