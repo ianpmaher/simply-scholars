@@ -3,7 +3,7 @@ import Card from "./Card";
 import Image from "next/image";
 import Skeleton from "./Skeleton";
 
-const ScholarshipBlock = (data) => {
+const ScholarshipBlock = (data, className) => {
     // const { title, value, description } = data;
     // destructuring the data object
 
@@ -13,7 +13,7 @@ const ScholarshipBlock = (data) => {
     };
 
     return (
-        <Card className="">
+        <Card className={className}>
             <h2 className="m-1">
                 <strong>{data.title}</strong>
             </h2>
