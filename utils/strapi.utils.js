@@ -1,4 +1,3 @@
-import axios from "axios";
 import Link from "next/link";
 
 const BASE_URL = process.env.STRAPI_URL || "http://localhost:1337/"; // default to localhost if not provided
@@ -7,8 +6,19 @@ export async function fetchDataStrapi(route) {
     const url = `${BASE_URL}/api/${route}`;
 
     try {
-        const res = await axios.get(url);
-        return res.data.data;
+        // const res = await axios.get(url);
+        const response = await fetch(url, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            // next: {
+            //     revalidate: 3600, // 1 hour in seconds // refetch every hour
+            // }
+        }); // fetch rather than axios, next.js and React have built in cache
+        const data = await response.json();
+        return data.data;
+        // return res.data.data;
     } catch (err) {
         console.error(`error: ${err}`);
         throw new Error(`Could not fetch ${url} ${err}`);
@@ -42,7 +52,7 @@ export async function fetchOneScholarship(id) {
     const url = `${BASE_URL}/api/scholarships/${id}?populate=deep`;
     // const url = `${BASE_URL}/api/scholarships/?sort[0]=title:asc&filters[${id}][$eq]=${id}&locale[0]=en`;
     try {
-        const res = await axios.get(url);
+        const res = await fetch(url);
         return res.data;
     } catch (err) {
         console.error(`error: ${err}`);

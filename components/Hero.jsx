@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Button from "./Button";
 
 const Hero = ({className}) => {
     return (
@@ -11,11 +11,11 @@ const Hero = ({className}) => {
                 <h1>Hero</h1>
                 <p>Hero text</p>
             </div>
-            <button className="bg-blue-600 text-white rounded hover:bg-blue-300 hover:text-black p-2">
-                <Link href="/about">
+            <Button className={"button-base hover:bg-custom-silver hover:text-black transition-all duration-200"}>
+                <Link href="/scholarships">
                     Learn more
                 </Link>
-            </button>
+            </Button>
         </section>
     )
 }

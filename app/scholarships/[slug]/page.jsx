@@ -11,7 +11,6 @@ import {
 // import ScholarshipBlock from "@/components/ScholarshipBlock";
 import Image from "next/image";
 import ScholarshipBlock from "@/components/ScholarshipBlock";
-import { useParams } from "next/navigation";
 
 // now also need to generate all the static params beacuse Next.js dynamic routing
 

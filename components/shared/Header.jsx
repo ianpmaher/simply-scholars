@@ -29,7 +29,7 @@ const Header = (props) => {
     // ]
 
     return (
-        <header className="flex my-0 mx-auto justify-center content-center items-center">
+        <header className="bg-custom-white flex my-0 mx-auto justify-center content-center items-center min-w-full">
             <Image src={"/assets/placeholder.svg"} alt="logo" width="99" height="99" /> 
             <h1 className="text-3xl font-bold">Scholarship Finder</h1>
             {/* <nav className={`header ${path === "/" ? "header--home" : ""}`} style={HeaderStyle}>

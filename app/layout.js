@@ -23,11 +23,11 @@ export default function RootLayout({ children }) {
                 <div className="min-h-screen flex flex-col">
                     <Header />
                     <div className="flex flex-1 flex-col sm:flex-row">
-                        <Navbar className="order-first sm:w-30 bg-green-400 flex flex-col justify-start items-center p-1" />
-                        <main className="flex-1 bg-blue-300 p-1">{children}</main>
-                        <Sidebar className="sm:w-30 bg-red-100 p-1" />
+                        <Navbar className="order-first sm:w-30 bg-custom-silver flex flex-col justify-start items-center p-1" />
+                        <main className="flex-1 bg-custom-white p-1">{children}</main>
+                        {/* <Sidebar className="sm:w-30 bg-red-100 p-1" /> */}
                     </div>
-                    <Footer className="bg-orange-300 p-1 text-center flex flex-col my-0" />
+                    <Footer className="bg-orange-200 p-1 text-center flex flex-col my-0" />
                 </div>
             </body>
         </html>
