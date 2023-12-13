@@ -1,8 +1,8 @@
 // import Image from "next/image";
-import ScholarshipBlock from "@/components/ScholarshipBlock";
 import Hero from "../components/Hero";
 import { fetchDataStrapi, processScholarship } from "@/utils/strapi.utils";
 import Carousel from "@/components/Carousel";
+import ScholarshipPreviewBlock from "@/components/ScholarshipPreviewBlock";
 
 export default async function Home() {
     // home page ---
@@ -17,7 +17,7 @@ export default async function Home() {
             <article className="flex flex-col items-center justify-between p-1">
                 <h1 className="text-3xl font-bold text-center">Wow, this is a cool page!</h1>
             </article>
-            <Carousel processedData={processedData} />
+            {/* <Carousel /> */}
         </div>
     );
 }

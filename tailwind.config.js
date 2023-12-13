@@ -19,6 +19,10 @@ module.exports = {
             boxShadow: {
                 custom: "rgba(50,50,93,0.25) 0px 4px 10px -2px, rgba(0, 0, 0, 0.3) 0px 2px 6px -2px",
             },
+            backgroundImage: {
+                "custom-gradient": "conic-gradient(180deg, #004E98 0%, #3A6EA5 100%)",
+            }
+            
         },
     },
     plugins: [require("@tailwindcss/typography")],

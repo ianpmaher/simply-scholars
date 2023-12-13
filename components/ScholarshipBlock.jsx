@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown"; // swing and a miss here
 import { formatDate } from "@/utils/strapi.utils";
-import Card from "./Card";
+import Card from "./shared/Card";
 import Image from "next/image";
 import Skeleton from "./Skeleton";
 
