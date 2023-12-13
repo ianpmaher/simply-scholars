@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import { fetchDataStrapi, processScholarship } from "@/utils/strapi.utils";
 import Carousel from "@/components/Carousel";
 import ScholarshipPreviewBlock from "@/components/ScholarshipPreviewBlock";
+import FormSubmit from "@/components/FormSubmit";
 
 export default async function Home() {
     // home page ---
@@ -18,6 +19,7 @@ export default async function Home() {
                 <h1 className="text-3xl font-bold text-center">Wow, this is a cool page!</h1>
             </article>
             {/* <Carousel /> */}
+            <FormSubmit placeholder={"kitten"} text={"submit lol"} />
         </div>
     );
 }

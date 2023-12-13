@@ -89,3 +89,8 @@ export function formatDate(dateStr) {
         day: "numeric",
     });
 }
+
+export function getStrapiURL(route = '') {
+    return `${BASE_URL}${route}`;
+
+}
