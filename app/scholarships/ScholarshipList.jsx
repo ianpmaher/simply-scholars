@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ScholarshipList({ scholarships }) {
     return (
-        <div className="bg-red-400 py-0 px-auto text-center">
+        <div className="bg-red-400 p-1 text-center">
             <h1>Scholarships</h1>
             <ul>
                 {scholarships.map((scholarship) => (

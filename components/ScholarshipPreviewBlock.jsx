@@ -24,7 +24,7 @@ const ScholarshipPreviewBlock = (data) => {
                 {data.pic ? <Image src={data.pic} alt="scholarship image" width="100" height="100" /> : <Skeleton />}
             </div>
             <ul className="list-none">
-                {data.value && <li>{data.value}</li>}
+                {data.value && <li>$ {data.value}</li>}
                 {data.deadline && <li>{formattedDeadline}</li>}
                 {data.eligibility && <li>{data.eligibility}</li>}
             </ul>

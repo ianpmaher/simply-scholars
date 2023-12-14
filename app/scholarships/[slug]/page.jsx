@@ -12,12 +12,13 @@ import {
 import Image from "next/image";
 import ScholarshipBlock from "@/components/ScholarshipBlock";
 import Skeleton from "@/components/Skeleton";
+import ContentScholarshipContent from "@/components/ContentScholarshipContent";
 
 // now also need to generate all the static params beacuse Next.js dynamic routing
 
 export async function generateStaticParams() {
     try {
-        const data = await fetchDataStrapi("scholarships-landing?populate=deep"); // this is SCHOLARSHIPS route
+        const data = await fetchDataStrapi("scholarships?populate=deep"); // this is SCHOLARSHIPS route
         const processedScholarships = processScholarship(data);
         return processedScholarships.map((scholarship) => ({
             id: scholarship.id,
@@ -29,44 +30,23 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
-    const slug = params;
+    const slug = params.slug;
+    console.log(params.slug)
     const scholarshipId = await fetchDataStrapi(`scholarships/${params.slug}?populate=deep`);
     console.log(scholarshipId);
 
-    // const scholarship = await fetchOneScholarship(id);
-    const processedScholarship = processOneScholarship(scholarshipId); // OMG THIS IS WORKING
-    console.log("processed scholarship", processedScholarship);
-    // const otherScholarships = await fetchDataStrapi("scholarships-landing?populate=deep"); // maybe add these in elsewhere on the page
-
-    const formattedDeadline = formatDate(processedScholarship.deadline);
-
-    const formattedMarkdown = <ReactMarkdown className="prose">{processedScholarship.description}</ReactMarkdown>;
+    // const oneScholarship = await fetchOneScholarship(`scholarships/${params.slug}/?populate=deep`);
+       
+    // const formattedDeadline = formatDate(processedScholarship.deadline);
+    // const formattedMarkdown = <ReactMarkdown className="prose">{processedScholarship.description}</ReactMarkdown>;
 
     return (
         <main className="flex flex-col justify-center items-center">
-            {/* <ScholarshipBlock data={processedScholarship} /> */}
-            <h1 className="text-3xl font-bold">{processedScholarship.title}</h1>
-            <div className="flex flex-row justify-center items-center">
-                {processedScholarship.pic ? (
-                    <Image
-                    src={processedScholarship.pic}
-                    placeholder="blur"
-                    blurDataURL="public/assets/scholar.png"
-                    alt="scholarship image"
-                    width="100"
-                    height="100"
-                />
-                ) : (
-                <Skeleton /> )}
-            </div>
-            <ul className="list-none">
-                {processedScholarship.value && <li>{processedScholarship.value}</li>}
-                {processedScholarship.deadline && <li>{formattedDeadline}</li>}
-                {processedScholarship.eligibility && <li>{processedScholarship.eligibility}</li>}
-            </ul>
-            {formattedMarkdown}
+            <h1>ads</h1>
+            <ContentScholarshipContent data={scholarshipId} id={params.slug} />
+
         </main>
     );
 }
 
-export const revalidate = (1800); // revalidate every 30 minutes
+export const revalidate = (900); // revalidate every 15 minutes
