@@ -28,13 +28,13 @@ export default async function Page() {
                         <h2 className="tracking-tight">
                             <strong>{scholarship.title}</strong>
                         </h2>
-                        <div className="flex flex-row justify-center items-center">
+                        {/* <div className="flex flex-row justify-center items-center">
                             {scholarship.pic ? (
                                 <Image src={scholarship.pic} alt="scholarship image" width="100" height="100" />
                             ) : (
-                                <Skeleton />
+                                <Image src={<Skeleton />} alt="scholarship image" width="100" height="100" />
                             )}
-                        </div>
+                        </div> */}
                         <ul className="list-none">
                             {scholarship.value && <li>{scholarship.value}</li>}
                             {scholarship.deadline && <li>{formatDate(scholarship.deadline)}</li>}
@@ -50,3 +50,5 @@ export default async function Page() {
         </main>
     );
 }
+
+export const revalidate = (1800); // revalidate every 30 minutes

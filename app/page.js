@@ -19,7 +19,7 @@ export default async function Home() {
                 <h1 className="text-3xl font-bold text-center">Wow, this is a cool page!</h1>
             </article>
             {/* <Carousel /> */}
-            <FormSubmit placeholder={"kitten"} text={"submit lol"} />
+            <FormSubmit />
         </div>
     );
 }

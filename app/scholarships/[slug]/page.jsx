@@ -11,6 +11,7 @@ import {
 // import ScholarshipBlock from "@/components/ScholarshipBlock";
 import Image from "next/image";
 import ScholarshipBlock from "@/components/ScholarshipBlock";
+import Skeleton from "@/components/Skeleton";
 
 // now also need to generate all the static params beacuse Next.js dynamic routing
 
@@ -46,7 +47,17 @@ export default async function Page({ params }) {
             {/* <ScholarshipBlock data={processedScholarship} /> */}
             <h1 className="text-3xl font-bold">{processedScholarship.title}</h1>
             <div className="flex flex-row justify-center items-center">
-                <Image src={processedScholarship.pic} alt="scholarship image" width="100" height="100" />
+                {processedScholarship.pic ? (
+                    <Image
+                    src={processedScholarship.pic}
+                    placeholder="blur"
+                    blurDataURL="public/assets/scholar.png"
+                    alt="scholarship image"
+                    width="100"
+                    height="100"
+                />
+                ) : (
+                <Skeleton /> )}
             </div>
             <ul className="list-none">
                 {processedScholarship.value && <li>{processedScholarship.value}</li>}
@@ -57,3 +68,5 @@ export default async function Page({ params }) {
         </main>
     );
 }
+
+export const revalidate = (1800); // revalidate every 30 minutes
