@@ -8,7 +8,7 @@ import FormSubmit from "@/components/FormSubmit";
 export default async function Home() {
     // home page ---
     // INDEX ROUTE essentially / GET ALL
-    const data = await fetchDataStrapi("scholarships-landing?populate=deep"); // this is SCHOLARSHIPS route
+    const data = await fetchDataStrapi("scholarships?populate=deep"); // this is SCHOLARSHIPS route
     const processedData = processScholarship(data);
     // console.log("processedData", processedData);
 
@@ -23,3 +23,5 @@ export default async function Home() {
         </div>
     );
 }
+
+export const revalidate = 300; // revalidate every 5 minutes

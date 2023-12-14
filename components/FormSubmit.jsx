@@ -67,37 +67,6 @@ const FormSubmit = () => {
         }
     };
 
-    // const renderCheckbox = (scholarship) => {
-    //     const { scholarships } = modifiedData;
-    //     const isChecked = scholarships.includes(scholarship.id);
-    //     const handleCheckboxChange = () => {
-    //         if (isChecked) {
-    //             setModifiedData((prev) => ({
-    //                 ...prev,
-    //                 scholarships: scholarships.filter((id) => id !== scholarship.id),
-    //             }));
-    //         } else {
-    //             setModifiedData((prev) => ({
-    //                 ...prev,
-    //                 scholarships: [...scholarships, scholarship.id],
-    //             }));
-    //         }
-    //     };
-    //     return (
-    //         <div key={scholarship.id}>
-    //             <input
-    //                 type="checkbox"
-    //                 id={scholarship.id}
-    //                 name={scholarship.name}
-    //                 value={scholarship.id}
-    //                 checked={isChecked}
-    //                 onChange={handleCheckboxChange}
-    //             />
-    //             <label htmlFor={scholarship.id}>{scholarship.name}</label>
-    //         </div>
-    //     );
-    // };
-
     return (
         <div className="flex flex-col justify-center items-center">
             <form className="flex flex-col md:flex-col" onSubmit={handleSubmit}>

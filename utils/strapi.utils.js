@@ -40,7 +40,7 @@ export function processScholarship(data) {
     return rawData.map((dataBlock) => ({
         ...dataBlock.attributes,
         // title: dataBlock.attributes.title,
-        title: dataBlock.attributes.name,
+        title: dataBlock.attributes.title,
         id: dataBlock.id,
         // description: dataBlock.attributes.description,
         value: dataBlock.attributes.value,
@@ -50,23 +50,6 @@ export function processScholarship(data) {
         // // below is all thanks to Nick Fis, Strapi uploads the media to a different API endpoint
         // pic: BASE_URL + dataBlock.attributes?.pic?.data?.attributes?.url,
         // // publishedAt: item.publishedAt.toLocalString(),
-    }));
-}
-
-// ==================== //
-// NEEDED TO MAP OUT THE ARRAY NESTED INSIDE THE SCHOLARSHIP //
-export function processScholarshipContent(data) {
-    const rawData = data.attributes.scholarshipContent;
-    return rawData.map((dataBlock) => ({
-        ...dataBlock.attributes,
-        title: dataBlock.title,
-        id: dataBlock.id,
-        description: dataBlock.description,
-        backgroundColor: dataBlock.backgroundColor,
-        deadline: dataBlock.deadline,
-        // below is all thanks to Nick Fis, Strapi uploads the media to a different API endpoint
-        pic: BASE_URL + dataBlock.pic?.data?.attributes?.url,
-        // publishedAt: item.publishedAt.toLocalString(),
     }));
 }
 
@@ -127,4 +110,29 @@ export function formatDate(dateStr) {
 
 export function getStrapiURL(route = "") {
     return `${BASE_URL}${route}`;
+}
+
+export async function fetchScholarships() {
+    const allScholarships = await fetchDataStrapi("scholarships?populate=deep");
+    // console.log("allScholarships", allScholarships)
+
+    const processedScholarshipData = allScholarships.map(processScholarshipContent);
+    // console.log("processedScholarshipData", processedScholarshipData)
+    return processedScholarshipData;
+}
+
+// ==================== //
+// NEEDED TO MAP OUT THE ARRAY NESTED INSIDE THE SCHOLARSHIP //
+export function processScholarshipContent(scholarship) {
+    const rawData = scholarship.attributes["scholarshipContent"];
+    return rawData.map((dataBlock) => ({
+        ...scholarship,
+        id: scholarship.id,
+        backgroundColor: dataBlock.backgroundColor,
+        description: dataBlock.description,
+        title: dataBlock.title,
+        deadline: dataBlock.deadline,
+        // pic: BASE_URL + data.attributes.pic?.data?.attributes?.url,
+        // publishedAt: item.publishedAt.toLocalString(),
+    }));
 }

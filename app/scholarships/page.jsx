@@ -26,10 +26,10 @@ export default async function Page() {
                 {processedScholarships.map((scholarship, index) => (
                     <div
                         key={index}
-                        className="block max-w-md rounded-xl p-1 border border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300"
+                        className="block max-w-md rounded-xl min-h-[22rem] p-3 border border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300"
                     >
-                        <h2 className="tracking-tight">
-                            <strong>{scholarship.title}</strong>
+                        <h2 className="tracking-tight text-xl font-bold font-mono">
+                            {scholarship.title}
                         </h2>
                         {/* <div className="flex flex-row justify-center items-center">
                             {scholarship.pic ? (
@@ -45,9 +45,11 @@ export default async function Page() {
                         </ul>
                         {/* <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id} > Learn More </Link>
                         <Link href={`/scholarships/${scholarship.slug}`} id={scholarship.id}> Learn More </Link> */}
-                        <ReactMarkdown className="prose overflow-scroll max-h-32">
-                            {scholarship.description}
-                        </ReactMarkdown>
+                        <div className="overflow-scroll outline-violet-700 w-fit h-fit">
+                            <ReactMarkdown className="prose overflow-scroll max-h-52">
+                                {scholarship.description}
+                            </ReactMarkdown>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -55,4 +57,4 @@ export default async function Page() {
     );
 }
 
-export const revalidate = 900; // revalidate every 15 minutes
+export const revalidate = 300; // revalidate every 5 minutes
