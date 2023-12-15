@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={karla.className}>
-                <div className="min-h-screen flex flex-col">
+                <div className="min-h-screen">
                     <Header />
                     <div className="flex flex-1 flex-col sm:flex-row">
                         <Navbar className="order-first sm:w-30 bg-custom-silver flex flex-col justify-start items-center p-1" />

@@ -9,18 +9,24 @@ const parseJson = (response) => (response.json ? response.json() : response);
 //     "42df55e3e571255a6dbfae5ac5e42ab5816c9d2022005a63b534932d355e4730fb36d0309e9d44bc40194418797bf298c8420c8672c250982d1f53e865e6188d52f14ab22acdb98137c41fa942bdda840aa7c6c22026397c0891e0a2f826fd78deef953ca722427398be7adb7fb00809daf396b6c998b13a23d8ffef393c40b9";
 
 const apiTokenAuthor = "f9f01fea29f3f15535be150767c3ec5ff8ff7a6ea631106f32425c6b20862a70c35b6ec7f63292a579c200c32d9903677b948d453b7ce9a788bffc360ae9f05c177c0d623931ba41e084cae5dfa6073a98e48ba4a4cc5c3155c38d647a44e7083b265f23aecfcdee32ced621b36dde41f7eaa4c7105a26771ba9968a9d460dbe"
+// troubleshooting headers
+const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${apiTokenAuthor}`
+}
+
 
 const FormSubmit = () => {
     // console.log("api token", apiToken);
 
     const [formData, setFormData] = useState({
-        data: {
-            title: "new scholarship",
-            description: "",
-            isActive: true,
-            color: "#31fcff",
-            value: "500",
-        },
+        // data: {
+        title: "",
+        description: "",
+        isActive: "",
+        color: "",
+        value: "",
+        // },
         // deadline: useState("2024-01-01"),
     });
 
@@ -38,13 +44,12 @@ const FormSubmit = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch("https://simply-scholars-821b524821cf.herokuapp.com/api/scholarships", {
+            console.log(formData)
+            const response = await fetch("https://simply-scholars-821b524821cf.herokuapp.com/api/scholarships/", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${apiTokenAuthor}`,
-                },
-                body: JSON.stringify(formData),
+                headers,
+                body: JSON.stringify({data: {formData}}),
+                // "Missing "data" payload in the request body"
             });
 
             if (response.ok) {
@@ -52,10 +57,10 @@ const FormSubmit = () => {
                 // console.log(parseJson(response));
                 // reset form data after submission
                 setFormData({
-                    title: "new scholarship",
+                    title: "",
                     description: "",
-                    isActive: true,
-                    color: "#31fcff",
+                    isActive: "",
+                    color: "",
                     value: "",
                     // deadline: useState("2024-01-01"),
                 });
@@ -88,6 +93,7 @@ const FormSubmit = () => {
                         className="w-full md:w-3/4 border border-gray-300 rounded-md p-2 mb-2 md:mb-0"
                         type="textarea"
                         name="description"
+                        id="description"
                         placeholder="Description"
                         value={formData.description}
                         onChange={handleChange}
@@ -99,6 +105,7 @@ const FormSubmit = () => {
                         className="w-full md:w-3/4 border border-gray-300 rounded-md p-2 mb-2 md:mb-0"
                         type="checkbox"
                         name="isActive"
+                        id="isActive"
                         value={formData.isActive}
                         onChange={handleChange}
                     />
