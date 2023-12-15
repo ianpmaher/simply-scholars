@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-const BASE_URL = process.env.STRAPI_URL || "http://localhost:1337/"; // default to localhost if not provided
+// TODO WHY DOES DOTENV NOT WORK 
+// const BASE_URL = process.env.STRAPI_URL || "http://localhost:1337"; // default to localhost if not provided
+const BASE_URL = "https://simply-scholars-821b524821cf.herokuapp.com" || "http://localhost:1337"; // default to localhost if not provided
 
 export async function fetchDataStrapi(route) {
     const url = `${BASE_URL}/api/${route}`;
@@ -108,10 +110,6 @@ export function formatDate(dateStr) {
     });
 }
 
-export function getStrapiURL(route = "") {
-    return `${BASE_URL}${route}`;
-}
-
 export async function fetchScholarships() {
     const allScholarships = await fetchDataStrapi("scholarships?populate=deep");
     // console.log("allScholarships", allScholarships)
@@ -124,10 +122,12 @@ export async function fetchScholarships() {
 // ==================== //
 // NEEDED TO MAP OUT THE ARRAY NESTED INSIDE THE SCHOLARSHIP //
 export function processScholarshipContent(scholarship) {
+    // const rawData = scholarship.attributes["scholarshipContent"];
     const rawData = scholarship.attributes["scholarshipContent"];
+    console.log("rawData", rawData)
     return rawData.map((dataBlock) => ({
         ...scholarship,
-        id: scholarship.id,
+        // id: scholarship.id,
         backgroundColor: dataBlock.backgroundColor,
         description: dataBlock.description,
         title: dataBlock.title,

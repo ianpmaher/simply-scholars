@@ -5,8 +5,10 @@ import { useState } from "react";
 const parseJson = (response) => (response.json ? response.json() : response);
 
 // const apiToken = process.env.API_TOKEN;
-const apiToken =
-    "42df55e3e571255a6dbfae5ac5e42ab5816c9d2022005a63b534932d355e4730fb36d0309e9d44bc40194418797bf298c8420c8672c250982d1f53e865e6188d52f14ab22acdb98137c41fa942bdda840aa7c6c22026397c0891e0a2f826fd78deef953ca722427398be7adb7fb00809daf396b6c998b13a23d8ffef393c40b9";
+// const apiToken =
+//     "42df55e3e571255a6dbfae5ac5e42ab5816c9d2022005a63b534932d355e4730fb36d0309e9d44bc40194418797bf298c8420c8672c250982d1f53e865e6188d52f14ab22acdb98137c41fa942bdda840aa7c6c22026397c0891e0a2f826fd78deef953ca722427398be7adb7fb00809daf396b6c998b13a23d8ffef393c40b9";
+
+const apiTokenAuthor = "f9f01fea29f3f15535be150767c3ec5ff8ff7a6ea631106f32425c6b20862a70c35b6ec7f63292a579c200c32d9903677b948d453b7ce9a788bffc360ae9f05c177c0d623931ba41e084cae5dfa6073a98e48ba4a4cc5c3155c38d647a44e7083b265f23aecfcdee32ced621b36dde41f7eaa4c7105a26771ba9968a9d460dbe"
 
 const FormSubmit = () => {
     // console.log("api token", apiToken);
@@ -40,14 +42,14 @@ const FormSubmit = () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${apiToken}`,
+                    Authorization: `Bearer ${apiTokenAuthor}`,
                 },
                 body: JSON.stringify(formData),
             });
 
             if (response.ok) {
                 console.log("success");
-                console.log(parseJson(response));
+                // console.log(parseJson(response));
                 // reset form data after submission
                 setFormData({
                     title: "new scholarship",
@@ -60,7 +62,6 @@ const FormSubmit = () => {
             } else {
                 console.log("error in submission");
                 console.log(parseJson(response));
-                console.log("api token", apiToken);
             }
         } catch (error) {
             console.log("error creating post", error);

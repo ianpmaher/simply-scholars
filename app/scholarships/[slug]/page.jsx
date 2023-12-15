@@ -23,9 +23,9 @@ export default async function Page({ params }) {
     // const scholarships = await fetchScholarships();
     const scholarshipIndv = await fetchOneScholarship(params.slug);
     // const scholarshipKitten = processScholarship(scholarshipIndv);
-    console.log(scholarshipIndv); 
+    // console.log(scholarshipIndv); 
     const processedScholarshipThing = processScholarshipContent(scholarshipIndv);
-    console.log(processedScholarshipThing);
+    // console.log("processed", processedScholarshipThing);
     // 
     // if want to have other cards on the page, need to fetch all the scholarships and then filter out the one that matches the slug
     // const moreScholarships = scholarships.filter((scholarship) => scholarship.slug !== slug);
@@ -34,7 +34,8 @@ export default async function Page({ params }) {
         <main className="flex flex-col justify-center items-center">
             <h1>ads</h1>
             
-            <ScholarshipBlock scholarship={scholarshipIndv} />
+            {/* <ScholarshipBlock data={scholarshipIndv} /> */}
+            <ScholarshipComponent component={processedScholarshipThing} />
         </main>
     );
 }

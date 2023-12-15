@@ -1,14 +1,23 @@
-// "use client";
+"use client";
 
-// import { useState, useRef } from "react";
-// import { motion, useMotionValue, easeInOut } from "framer-motion";
+// I am utilizing this because of the time crunch. It is a nicely configurable component. 
+// when time allows I want to create my own react carousel from scratch
+// https://github.com/express-labs/pure-react-carousel
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
+import { fetchDataStrapi } from "@/utils/strapi.utils";
 
-// // https://github.com/Jeyprox/framer-carousel/blob/master/src/app/page.tsx
+const Carousel = (props) => {
 
-// const Carousel = (props) => {
-//     const containerRef = useRef(null);
-//     const itemsRef = useRef(null);
-//     const [activeSlide, setActiveSlide] = useState(1);
-//     const canScrollPrevious = activeSlide > 1;
-//     const canScrollNext = activeSlide < props.children.length;
-//     const [isDragging, setIsDragging] = useState(false);
+    return(
+        <div>
+                <h1>test</h1>
+            <CarouselProvider
+                naturalSlideHeight={125}
+                naturalSlideWidth={125}
+            >
+            </CarouselProvider>
+        </div>
+    )
+}
+
+export default Carousel

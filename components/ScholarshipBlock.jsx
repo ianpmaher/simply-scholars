@@ -4,7 +4,7 @@ import Card from "./shared/Card";
 import Image from "next/image";
 import Skeleton from "./Skeleton";
 
-const ScholarshipBlock = (data, className) => {
+const ScholarshipBlock = (data) => {
     // const { title, value, description } = data;
     // destructuring the data object
 
@@ -20,7 +20,7 @@ const ScholarshipBlock = (data, className) => {
             <h2 className="m-1">
                 <strong>{data.title}</strong>
             </h2>
-            {data.pic ? <Image src={data.pic} alt="scholarship image" width="100" height="100" /> : <Skeleton />}
+            {/* {data.pic ? <Image src={data.pic} alt="scholarship image" width="100" height="100" /> : <Skeleton />} */}
             <ul className="flex flex-col gap-2 items-center list-none my-2 p-0">
                 {data.value && <li className="text-md font-bold ">${data.value}</li>}
                 {data.deadline && <li>Deadline: <span className="font-bold ml-1">{formattedDeadline}</span></li>}
