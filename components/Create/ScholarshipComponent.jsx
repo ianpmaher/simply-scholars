@@ -1,3 +1,4 @@
+// THIS IS THE INTERPRETER BASICALLY FOR THE DYNAMIC ZONE DATA
 import React from "react";
 import DescriptionComponent from "./DescriptionComponent";
 import DeadlineComponent from "./DeadlineComponent";
@@ -13,6 +14,9 @@ const ScholarshipComponent = ({component}) => {
         const componentType = component["__component"];
 
         switch (componentType) {
+            //     return <PicComponent component={component} />;
+            case "scholarship-form.background":
+                return <BackgroundComponent component={component} />;
             case "scholarship-form.title":
                 return <TitleComponent component={component} />;
             case "scholarship-form.description":
@@ -20,15 +24,13 @@ const ScholarshipComponent = ({component}) => {
             case "scholarship-form.deadline":
                 return <DeadlineComponent component={component} />;
             // case "pic":
-            //     return <PicComponent component={component} />;
-            case "scholarship-form.background":
-                return <BackgroundComponent component={component} />;
             default:
                 return null;
         }
 
     });
     
+    // NOTE FOR READER : below is me getting the nesting right 😎
     // const componentType = component[0].attributes.scholarshipContent[1]["__component"]; //
     
     // switch (componentType) {

@@ -3,11 +3,9 @@ import { formatDate } from "@/utils/strapi.utils";
 const DeadlineComponent = ({component}) => {
     const formattedDeadline = formatDate(component.deadline);
     return (
-        <div className="flex flex-col justify-center items-center">
-            <h2 className="">
-                <strong>{component.deadline}</strong>
-            </h2>
-            <p className="text-center">{formattedDeadline}</p>
+        <div className="flex flex-row justify-center items-center gap-3">
+            <h2 className="text-center prose">Deadline:</h2>
+            <p className="prose font-extrabold">{formattedDeadline}</p>
         </div>
     );
 }
