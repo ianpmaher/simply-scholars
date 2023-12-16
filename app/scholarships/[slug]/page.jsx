@@ -16,6 +16,7 @@ import ScholarshipBlock from "@/components/ScholarshipBlock";
 import Skeleton from "@/components/Skeleton";
 import ScholarshipComponent from "components/Create/ScholarshipComponent.jsx";
 import BackgroundComponent from "@/components/Create/BackgroundComponent";
+import DeleteButton from "@/components/DeleteButton";
 
 export default async function Page({ params }) {
     const slug = params.slug;
@@ -33,12 +34,13 @@ export default async function Page({ params }) {
 
     return (
         <main className="flex flex-col justify-center items-center">
-            <h1>ads</h1>
+            <h1 className=" text-xl">Title: <span className=" font-bold italic">{scholarshipIndv.attributes.title}</span></h1>
 
             {/* <ScholarshipBlock data={scholarshipIndv} /> */}
             <BackgroundComponent component={processedScholarshipThing}>
                 <ScholarshipComponent component={processedScholarshipThing} />
             </BackgroundComponent>
+            <DeleteButton slug={slug} />
         </main>
     );
 }

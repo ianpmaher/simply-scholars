@@ -124,7 +124,7 @@ export async function fetchScholarships() {
 export function processScholarshipContent(scholarship) {
     // const rawData = scholarship.attributes["scholarshipContent"];
     const rawData = scholarship.attributes["scholarshipContent"];
-    console.log("rawData", rawData)
+    // console.log("rawData", rawData)
     return rawData.map((dataBlock) => ({
         ...scholarship,
         // id: scholarship.id,

@@ -50,6 +50,9 @@ export default async function Page() {
                                 {scholarship.description}
                             </ReactMarkdown>
                         </div>
+                        <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id}>
+                            Learn More
+                        </Link>
                     </div>
                 ))}
             </div>
