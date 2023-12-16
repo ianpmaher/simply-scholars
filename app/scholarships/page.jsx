@@ -29,16 +29,14 @@ export default async function Page() {
                         key={index}
                         className="block max-w-lg h-fit rounded-xl min-h-[22rem] p-3 border bg-custom-white border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300 transition-all duration-700 ease-in-out"
                     >
-                        <h2 className="tracking-tight text-xl font-bold font-mono">
-                            {scholarship.title}
-                        </h2>
-                        {/* <div className="flex flex-row justify-center items-center">
+                        <h2 className="tracking-tight text-xl font-bold font-mono">{scholarship.title}</h2>
+                        <div className="flex flex-row justify-center items-center">
                             {scholarship.pic ? (
                                 <Image src={scholarship.pic} alt="scholarship image" width="100" height="100" />
                             ) : (
-                                <Image src={<Skeleton />} alt="scholarship image" width="100" height="100" />
+                                <Skeleton />
                             )}
-                        </div> */}
+                        </div>
                         <ul className="list-none">
                             {scholarship.value && <li>$ {scholarship.value}</li>}
                             {scholarship.deadline && <li>Deadline: {formatDate(scholarship.deadline)}</li>}
@@ -47,14 +45,14 @@ export default async function Page() {
                         {/* <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id} > Learn More </Link>
                         <Link href={`/scholarships/${scholarship.slug}`} id={scholarship.id}> Learn More </Link> */}
                         <div className="overflow-scroll outline-violet-700 w-fit h-fit">
+                            <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id}>
                             <ReactMarkdown className="prose overflow-scroll max-h-52 max-w-52">
                                 {scholarship.description}
                             </ReactMarkdown>
+                            </Link>
                         </div>
                         <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id}>
-                            <Button className="button-base p-1 m-0">
-                                Learn More    
-                            </Button>
+                            <Button className="button-base p-1 m-0">Learn More</Button>
                         </Link>
                     </div>
                 ))}
