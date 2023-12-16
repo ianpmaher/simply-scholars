@@ -1,4 +1,6 @@
 ### Scholarship Database Website
+![image](https://github.com/ianpmaher/simply-scholars/assets/120536234/ee46442d-6426-4b32-86d7-068427d556e7)
+
 **Live link to Deployment on Vercel: [https://simply-scholars-mxvkxuce6-ian-mahers-projects.vercel.app/](https://simply-scholars-mxvkxuce6-ian-mahers-projects.vercel.app/)**
 
 I will be creating a website builder. I want to provide a templating solution for people to create and maintain their own webpages without needing to learn extensive code or spend hours troubleshooting. This is a scaleable project for schools to utilize in an open source framework.
