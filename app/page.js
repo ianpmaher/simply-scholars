@@ -18,7 +18,7 @@ export default async function Home( {scholarships} ) {
             <article className="flex flex-col items-center justify-between p-1">
                 <h1 className="text-2xl font-bold text-center">Wow, this is a scholarships page!</h1>
             </article>
-            <article className="p-2 max-w-2xl mx-auto my-5">
+            <article className="p-2 max-w-2xl mx-auto my-5 overflow-x-auto">
                 <FormSubmit />
             </article>
             {/* <Carousel /> */}

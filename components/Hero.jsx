@@ -9,7 +9,6 @@ const Hero = ({className}) => {
             {/* </div> */}
             <div>
                 <h1>Hero</h1>
-                <p>Hero text</p>
             </div>
             <Button className={"button-base hover:bg-custom-silver hover:text-black transition-all duration-200"}>
                 <Link href="/scholarships">

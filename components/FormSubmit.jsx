@@ -74,12 +74,12 @@ const FormSubmit = ({className}) => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center self-center">
+        <div className="flex flex-col justify-center items-center self-center overflow-x-auto resize-none">
             <form className="flex flex-col md:flex-col gap-5 w-max justify-center self-center align-middle" onSubmit={handleSubmit}>
                 <label>
                     Name of scholarship:
                     <input
-                        className="w-full md:w-3/4 border border-gray-300 rounded-md p-2 mb-2 md:mb-0"
+                        className="w-full md:w-3/4 border border-gray-300 rounded-md p-2 mb-2 md:mb-0 overflow-x-auto"
                         type="text"
                         name="title"
                         id="title"
@@ -92,8 +92,8 @@ const FormSubmit = ({className}) => {
                     <textarea // nice!
                         className="w-full md:w-3/4 h-20 border border-gray-300 rounded-md overflow-x-auto resize-none p-2 mb-0 md:mb-1 text-sm"
                         type="textarea"
-                        rows="4"
-                        cols="60"
+                        rows="5"
+                        cols="40"
                         name="description"
                         id="description"
                         placeholder="Description"
