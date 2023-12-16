@@ -16,7 +16,7 @@ const ScholarshipPreviewBlock = (data) => {
     const formattedDeadline = formatDate(data.deadline);
 
     return (
-        <div className="block max-w-sm rounded-xl p-5 border border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300">
+        <div className="block max-w-sm rounded-xl p-5 border border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-800">
             <h2 className="tracking-tight">
                 <strong>{data.title}</strong>
             </h2>

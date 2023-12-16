@@ -38,10 +38,10 @@ const DeleteButton = (slug) => {
 
     return (
         <div>
-            {console.log("id", slug)}
-            {console.log("id", slug.slug)}
             <form onSubmit={deleteScholarship}>
-                <input type="submit" className="button-primary" onClick={deleteScholarship} />
+                <Button className="transition-all ease-in-out duration-500 button-base hover:rounded-2xl hover:mix-blend-difference" onClick={deleteScholarship}>
+                    delete scholarship
+                </Button>
             </form>
         </div>
     );

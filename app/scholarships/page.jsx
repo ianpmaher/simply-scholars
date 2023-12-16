@@ -26,7 +26,7 @@ export default async function Page() {
                 {processedScholarships.map((scholarship, index) => (
                     <div
                         key={index}
-                        className="block max-w-md rounded-xl min-h-[22rem] p-3 border border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300"
+                        className="block max-w-md rounded-xl min-h-[22rem] p-3 border border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300 transition-all duration-700 ease-in-out"
                     >
                         <h2 className="tracking-tight text-xl font-bold font-mono">
                             {scholarship.title}

@@ -21,13 +21,13 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className={karla.className}>
                 <div className="min-h-screen">
-                    <Header />
+                    <Header className="bg-custom-white flex my-0 mx-auto justify-center content-center items-center min-w-full bg-gradient-to-r from-custom-turquoise to-custom-green to-99%" />
                     <div className="flex flex-1 flex-col sm:flex-row">
-                        <Navbar className="order-first sm:w-30 bg-custom-silver flex flex-col justify-start items-center p-1" />
+                        <Navbar className="sticky order-first sm:w-30 bg-custom-silver flex md:flex-col sm:flex-row justify-start items-center p-1" />
                         <main className="flex-1 bg-custom-white p-1">{children}</main>
-                        {/* <Sidebar className="sm:w-30 bg-red-100 p-1" /> */}
+                        <Sidebar className="sm:w-30 bg-red-100 p-1" />
                     </div>
-                    <Footer className="bg-orange-200 p-1 text-center flex flex-col my-0" />
+                    <Footer className="bg-orange-200 p-1 text-right flex flex-col my-0" />
                 </div>
             </body>
         </html>
