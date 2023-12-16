@@ -23,11 +23,11 @@ export default async function Page() {
             <h3 className="text-xl font-bold">Scholarship Finder</h3>
             {/* GRID LAYOUT */}
             <ScholarshipList scholarships={processedScholarships} />
-            <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-3">
                 {processedScholarships.map((scholarship, index) => (
                     <div
                         key={index}
-                        className="block max-w-md rounded-xl min-h-[22rem] p-3 border bg-custom-white border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300 transition-all duration-700 ease-in-out"
+                        className="block max-w-lg h-fit rounded-xl min-h-[22rem] p-3 border bg-custom-white border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300 transition-all duration-700 ease-in-out"
                     >
                         <h2 className="tracking-tight text-xl font-bold font-mono">
                             {scholarship.title}
@@ -47,7 +47,7 @@ export default async function Page() {
                         {/* <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id} > Learn More </Link>
                         <Link href={`/scholarships/${scholarship.slug}`} id={scholarship.id}> Learn More </Link> */}
                         <div className="overflow-scroll outline-violet-700 w-fit h-fit">
-                            <ReactMarkdown className="prose overflow-scroll max-h-52">
+                            <ReactMarkdown className="prose overflow-scroll max-h-52 max-w-52">
                                 {scholarship.description}
                             </ReactMarkdown>
                         </div>

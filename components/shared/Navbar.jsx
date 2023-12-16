@@ -18,6 +18,10 @@ const Navbar = ({ className }) => {
             display: "Blog",
             slug: "/blog",
         },
+        {
+            display: "Admin",
+            slug: "https://simply-scholars-821b524821cf.herokuapp.com/admin/auth/login",
+        },
     ];
     return (
         <nav className={className} >
