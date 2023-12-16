@@ -6,8 +6,8 @@ const Header = (props) => {
 
     return (
         <header className={props.className}>
-            <Image src={"/assets/scholar.png"} alt="logo" width="99" height="99" /> 
-            <h1 className="text-3xl font-bold">Scholarship Finder</h1>
+            <Image src={"/assets/scholar.png"} alt="logo" width="80" height="99" /> 
+            <h1 className="text-2xl font-bold">Simply Scholars</h1>
         </header>
     )
 }

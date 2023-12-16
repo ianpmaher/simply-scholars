@@ -16,7 +16,7 @@ const headers = {
 }
 
 
-const FormSubmit = () => {
+const FormSubmit = ({className}) => {
     // console.log("api token", apiToken);
 
     const [formData, setFormData] = useState({
@@ -74,8 +74,8 @@ const FormSubmit = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center">
-            <form className="flex flex-col md:flex-col" onSubmit={handleSubmit}>
+        <div className="flex flex-col justify-center items-center self-center">
+            <form className="flex flex-col md:flex-col gap-5 w-max justify-center self-center align-middle" onSubmit={handleSubmit}>
                 <label>
                     Name of scholarship:
                     <input
@@ -89,9 +89,11 @@ const FormSubmit = () => {
                     />
                 </label>
                 <label>
-                    <input
-                        className="w-full md:w-3/4 border border-gray-300 rounded-md p-2 mb-2 md:mb-0"
+                    <textarea // nice!
+                        className="w-full md:w-3/4 h-20 border border-gray-300 rounded-md resize-none p-2 mb-0 md:mb-1 text-sm"
                         type="textarea"
+                        rows="4"
+                        cols="60"
                         name="description"
                         id="description"
                         placeholder="Description"
@@ -99,8 +101,8 @@ const FormSubmit = () => {
                         onChange={handleChange}
                     />
                 </label>
-                <label>
-                    Scholarships:
+                <label className="flex flex-row justify-center items-center w-2/4 italic">
+                    active?
                     <input
                         className="w-full md:w-3/4 border border-gray-300 rounded-md p-2 mb-2 md:mb-0"
                         type="checkbox"
@@ -111,7 +113,7 @@ const FormSubmit = () => {
                     />
                 </label>
                 <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-fit py-2 px-2 rounded-md"
                     type="submit"
                 >
                     Submit

@@ -13,18 +13,17 @@ export default async function Home( {scholarships} ) {
     // console.log("processedData", processedData[0]);
 
     return (
-        <div>
+        <div className="flex flex-col max-w-2xl max-h-full mx-auto my-0">
             <Hero />
             <article className="flex flex-col items-center justify-between p-1">
-                <h1 className="text-3xl font-bold text-center">Wow, this is a scholarships page!</h1>
+                <h1 className="text-2xl font-bold text-center">Wow, this is a scholarships page!</h1>
             </article>
-            <section className="flex flex-col items-center justify-between p-1">
-                <h6>asd</h6>
-            </section>
-            <FormSubmit />
-            <Carousel />
+            <article className="p-2 max-w-2xl mx-auto my-5">
+                <FormSubmit />
+            </article>
+            {/* <Carousel /> */}
         </div>
     );
 }
 
-export const revalidate = 300; // revalidate every 5 minutes
+export const revalidate = 60; // revalidate every 5 minutes

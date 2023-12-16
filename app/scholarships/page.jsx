@@ -10,6 +10,7 @@ import ScholarshipList from "./ScholarshipList";
 import { Links } from "@/components/Links";
 import ClientComponent from "./[slug]/ClientComponent";
 import ContentScholarshipContent from "@/components/ContentScholarshipContent";
+import Button from "@/components/Button";
 
 export default async function Page() {
     // const allScholarships = await fetchAllScholarships();
@@ -19,14 +20,14 @@ export default async function Page() {
 
     return (
         <main className="flex flex-col justify-center items-center">
-            <h1 className="text-3xl font-bold">Scholarships</h1>
+            <h3 className="text-xl font-bold">Scholarship Finder</h3>
             {/* GRID LAYOUT */}
             <ScholarshipList scholarships={processedScholarships} />
-            <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
                 {processedScholarships.map((scholarship, index) => (
                     <div
                         key={index}
-                        className="block max-w-md rounded-xl min-h-[22rem] p-3 border border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300 transition-all duration-700 ease-in-out"
+                        className="block max-w-md rounded-xl min-h-[22rem] p-3 border bg-custom-white border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300 transition-all duration-700 ease-in-out"
                     >
                         <h2 className="tracking-tight text-xl font-bold font-mono">
                             {scholarship.title}
@@ -51,7 +52,9 @@ export default async function Page() {
                             </ReactMarkdown>
                         </div>
                         <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id}>
-                            Learn More
+                            <Button className="button-base p-1 m-0">
+                                Learn More    
+                            </Button>
                         </Link>
                     </div>
                 ))}

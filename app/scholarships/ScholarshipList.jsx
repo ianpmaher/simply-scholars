@@ -8,7 +8,7 @@ export default function ScholarshipList({ scholarships }) {
             <ul>
                 {scholarships.map((scholarship) => (
                     <li key={scholarship.id}>
-                        <Link href={`/scholarships/${scholarship.id}`} className="hover:bg-custom-royal-blue hover:text-white transition-all delay-50 ease-out">
+                        <Link href={`/scholarships/${scholarship.id}`} className="hover:bg-custom-royal-blue hover:text-white transition-all delay-50 ease-out p-1">
                             {scholarship.title}
                         </Link>
                     </li>

@@ -21,7 +21,7 @@ const Navbar = ({ className }) => {
     ];
     return (
         <nav className={className} >
-            <ul className="nav flex md:flex-col sm:flex-row items-center gap-3 justify-center my-0 mx-auto p-0">
+            <ul className="nav flex xs:flex-row sm:flex-col flex-wrap items-center gap-3 justify-center my-0 mx-auto p-1">
                 {navPaths.map((navPath, item) => (
                     <li key={item} style={{ textTransform: "uppercase", fontSize: "1.25rem" }}>
                         <Link href={navPath.slug}>
