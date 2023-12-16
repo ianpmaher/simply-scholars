@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
                 <div className="min-h-screen bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900">
                     <Header className="w-[50vw] rounded-md flex my-0 mx-auto justify-center content-center items-center bg-gradient-to-br from-custom-turquoise from-10% via-custom-skyblue via-20% to-custom-green to-80%" />
                     <div className="flex flex-1 flex-col sm:flex-row">
-                        <Navbar className="sticky order-first sm:w-30 bg-custom-silver flex md:flex-col sm:flex-row justify-start items-center" />
+                        <Navbar className=" order-first sm:w-30 bg-custom-silver flex md:flex-col sm:flex-row justify-start items-center" />
                         <main className="flex-1 bg-custom-white ">{children}</main>
                         <Sidebar className="sm:w-30 bg-red-100" />
                     </div>
-                    <Footer className="bg-orange-200 p-1 text-right absolute bottom-0 right-1 flex flex-col my-0" />
+                    <Footer className="bg-orange-200 p-1 text-right fixed bottom-0 right-1 flex flex-col my-0" />
                 </div>
             </body>
         </html>

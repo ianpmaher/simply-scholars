@@ -90,7 +90,7 @@ const FormSubmit = ({className}) => {
                 </label>
                 <label>
                     <textarea // nice!
-                        className="w-full md:w-3/4 h-20 border border-gray-300 rounded-md resize-none p-2 mb-0 md:mb-1 text-sm"
+                        className="w-full md:w-3/4 h-20 border border-gray-300 rounded-md overflow-x-auto resize-none p-2 mb-0 md:mb-1 text-sm"
                         type="textarea"
                         rows="4"
                         cols="60"
