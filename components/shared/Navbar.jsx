@@ -55,8 +55,8 @@ const Navbar = ({ className }) => {
                 className="flex sm:flex-col xs:w-1/2 xs:flex-row top-0 left-0 z-fit w-fit sm:h-full xs:hidden transition-transform -translate-x-full sm:translate-x-0"
                 aria-label="Sidebar"
             >
-                <div className="xs:hidden sm:h-full p-1 overflow-x-auto bg-custom-turquoise dark:bg-gray-800">
-                    <ul className="sm:flex-row sm:flex-col font-medium flex align-center content-center justify-center items-center">
+                <div className="xs:hidden sm:h-full p-1 overflow-x-auto">
+                    <ul className="xs:flex-row sm:flex-col font-medium flex align-center content-center justify-center items-center">
                         <li>
                             <Link
                                 href="/"

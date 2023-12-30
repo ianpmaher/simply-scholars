@@ -17,8 +17,7 @@ export default async function Page() {
     // console.log(scholarships);
 
     return (
-        <main className="flex flex-col justify-center items-center">
-            <h3 className="text-xl font-bold">Scholarship Finder</h3>
+        <main className="flex flex-col justify-center items-center py-2">
             {/* GRID LAYOUT */}
             <ScholarshipList scholarships={processedScholarships} />
             <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-3">
