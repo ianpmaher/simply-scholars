@@ -5,12 +5,10 @@ import { formatDate } from "@/utils/strapi.utils";
 import Link from "next/link";
 import Image from "next/image";
 import Skeleton from "@/components/Skeleton";
-import ScholarshipPreviewBlock from "@/components/ScholarshipPreviewBlock";
 import ScholarshipList from "./ScholarshipList";
 import { Links } from "@/components/Links";
-import ClientComponent from "./[slug]/ClientComponent";
-import ContentScholarshipContent from "@/components/ContentScholarshipContent";
 import Button from "@/components/Button";
+import indexPic from "./indexPic";
 
 export default async function Page() {
     // const allScholarships = await fetchAllScholarships();
@@ -31,12 +29,30 @@ export default async function Page() {
                     >
                         <h2 className="tracking-tight text-xl font-bold font-mono">{scholarship.title}</h2>
                         <div className="flex flex-row justify-center items-center">
+                            {scholarship.id === 1 ? (
+                                <Image src="/assets/dar.jpg" alt="scholarship image" width="100" height="100" />
+                            ) : scholarship.id === 2 ? (
+                                <Image src="/assets/afl.png" alt="scholarship image" width="100" height="100" />
+                            ) : scholarship.id === 8 ? (
+                                <Image src="/assets/react_native.png" alt="scholarship image" width="100" height="100" />
+                            ) : scholarship.id === 7 ? (
+                                <Image src="/assets/luna.avif" alt="scholarship image" width="100" height="100" />
+                            ) : scholarship.id === 9 ? (
+                                <Image src="/assets/python.jpg" alt="scholarship image" width="100" height="100" />
+                            ) : scholarship.id === 6 ? (
+                                <Image src="/images/scholarship6.jpg" alt="scholarship image" width="100" height="100" />
+                            ) : ( 
+                                <Skeleton />
+                            )}
+                        </div>
+                        {/* BELOW: IF I CAN GET STRAPI TO WORK */}
+                        {/* <div className="flex flex-row justify-center items-center">
                             {scholarship.pic ? (
                                 <Image src={scholarship.pic} alt="scholarship image" width="100" height="100" />
                             ) : (
                                 <Skeleton />
                             )}
-                        </div>
+                        </div> */}
                         <ul className="list-none">
                             {scholarship.value && <li>$ {scholarship.value}</li>}
                             {scholarship.deadline && <li>Deadline: {formatDate(scholarship.deadline)}</li>}

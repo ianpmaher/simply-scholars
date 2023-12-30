@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import Hero from "../components/Hero";
+import Hero from "../../components/Hero";
 import { fetchDataStrapi, processScholarship } from "@/utils/strapi.utils";
 import Carousel from "@/components/Carousel";
 import ScholarshipPreviewBlock from "@/components/ScholarshipPreviewBlock";
