@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Josefin_Sans } from "next/font/google";
+import { formatDate } from "@/utils/strapi.utils";
 
 export default function ScholarshipList({ scholarships }) {
     return (
@@ -7,11 +8,15 @@ export default function ScholarshipList({ scholarships }) {
             <h1 className=" text-xl font-semibold italic font-[Inter]">Scholarships</h1>
             <ul>
                 {scholarships.map((scholarship) => (
-                    <li key={scholarship.id}>
-                        <Link href={`/scholarships/${scholarship.id}`} className="hover:bg-custom-royal-blue hover:text-white transition-all delay-50 ease-out p-1">
-                            {scholarship.title}
-                        </Link>
-                    </li>
+                    <Link
+                        key={scholarship.id}
+                        href={`/scholarships/${scholarship.id}`}
+                        className="hover:bg-custom-royal-blue hover:text-white transition-all delay-50 ease-out p-1 flex flex-row justify-between gap-5"
+                    >
+                        <li className="font-bold">{scholarship.title}</li>
+                        
+                        {scholarship.deadline && <li>{formatDate(scholarship.deadline)}</li>}
+                    </Link>
                 ))}
             </ul>
         </div>
