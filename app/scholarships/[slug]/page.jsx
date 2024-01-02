@@ -34,13 +34,32 @@ export default async function Page({ params }) {
 
     return (
         <main className="flex flex-col justify-center items-center">
-            <h1 className=" text-xl">Title: <span className=" font-bold italic">{scholarshipIndv.attributes.title}</span></h1>
+            {/* <h1 className=" text-xl">
+                Title: <span className=" font-bold italic">{scholarshipIndv.attributes.title}</span>
+            </h1> */}
 
             {/* <ScholarshipBlock data={scholarshipIndv} /> */}
             <BackgroundComponent component={processedScholarshipThing}>
+                <div className="flex flex-row justify-center items-center w-3/5">
+                    {scholarshipIndv.id === 1 ? (
+                        <Image src="/assets/dar.jpg" alt="scholarship image" width="100" height="100" />
+                    ) : scholarshipIndv.id === 2 ? (
+                        <Image src="/assets/afl.png" alt="scholarship image" width="100" height="100" />
+                    ) : scholarshipIndv.id === 8 ? (
+                        <Image src="/assets/react_native.png" alt="scholarship image" width="100" height="100" />
+                    ) : scholarshipIndv.id === 7 ? (
+                        <Image src="/assets/luna.avif" alt="scholarship image" width="100" height="100" />
+                    ) : scholarshipIndv.id === 9 ? (
+                        <Image src="/assets/python.jpg" alt="scholarship image" width="100" height="100" />
+                    ) : scholarshipIndv.id === 6 ? (
+                        <Image src="/images/scholarship6.jpg" alt="scholarship image" width="100" height="100" />
+                    ) : (
+                        <Skeleton />
+                    )}
+                </div>
                 <ScholarshipComponent component={processedScholarshipThing} />
             </BackgroundComponent>
-            <DeleteButton slug={slug} />
+            {/* <DeleteButton slug={slug} /> */}
         </main>
     );
 }
