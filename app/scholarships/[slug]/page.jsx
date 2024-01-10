@@ -33,7 +33,7 @@ export default async function Page({ params }) {
     // const moreScholarships = scholarships.filter((scholarship) => scholarship.slug !== slug);
 
     return (
-        <main className="flex flex-col justify-center items-center">
+        <main className="flex flex-col justify-center items-center ">
             {/* <h1 className=" text-xl">
                 Title: <span className=" font-bold italic">{scholarshipIndv.attributes.title}</span>
             </h1> */}
@@ -42,17 +42,19 @@ export default async function Page({ params }) {
             <BackgroundComponent component={processedScholarshipThing}>
                 <div className="flex flex-row justify-center items-center w-3/5">
                     {scholarshipIndv.id === 1 ? (
-                        <Image src="/assets/dar.jpg" alt="scholarship image" width="100" height="100" />
+                        <Image src="/assets/dar.jpg" alt="daughters of american revolution" width="100" height="100" />
                     ) : scholarshipIndv.id === 2 ? (
-                        <Image src="/assets/afl.png" alt="scholarship image" width="100" height="100" />
+                        <Image src="/assets/afl.png" alt="afl cio union" width="100" height="100" />
                     ) : scholarshipIndv.id === 8 ? (
-                        <Image src="/assets/react_native.png" alt="scholarship image" width="100" height="100" />
+                        <Image src="/assets/react_native.png" alt="react native" width="100" height="100" />
                     ) : scholarshipIndv.id === 7 ? (
-                        <Image src="/assets/luna.avif" alt="scholarship image" width="100" height="100" />
+                        <Image src="/assets/luna.avif" alt="golden retriver" width="100" height="100" />
                     ) : scholarshipIndv.id === 9 ? (
-                        <Image src="/assets/python.jpg" alt="scholarship image" width="100" height="100" />
+                        <Image src="/assets/python.jpg" alt="python on computer" width="100" height="100" />
                     ) : scholarshipIndv.id === 6 ? (
-                        <Image src="/images/scholarship6.jpg" alt="scholarship image" width="100" height="100" />
+                        <Image src="/images/scholarship6.jpg" alt="placeholder" width="100" height="100" />
+                    ) : scholarshipIndv.id === 20 ? (
+                        <span>🇮🇹</span>
                     ) : (
                         <Skeleton />
                     )}

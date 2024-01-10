@@ -20,11 +20,12 @@ export default async function Page() {
         <main className="flex flex-col justify-center items-center py-2">
             {/* GRID LAYOUT */}
             <ScholarshipList scholarships={processedScholarships} />
+            {/* grid container */}
             <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-3">
                 {processedScholarships.map((scholarship, index) => (
                     <div
                         key={index}
-                        className="block max-w-lg h-fit rounded-xl min-h-[22rem] p-3 border bg-custom-white border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:bg-orange-300 transition-all duration-700 ease-in-out"
+                        className="block max-w-lg h-fit rounded-xl min-h-[22rem] p-3 border bg-custom-white border-cyan-950 text-center shadow-custom hover:border-cyan-300 hover:translate-y-1 transition-all duration-700 ease-in-out overflow-hidden"
                     >
                         <h2 className="tracking-tight text-xl font-bold font-mono">{scholarship.title}</h2>
                         <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id}>
@@ -44,13 +45,8 @@ export default async function Page() {
                                     <Image src="/assets/luna.avif" alt="scholarship image" width="100" height="100" />
                                 ) : scholarship.id === 9 ? (
                                     <Image src="/assets/python.jpg" alt="scholarship image" width="100" height="100" />
-                                ) : scholarship.id === 6 ? (
-                                    <Image
-                                        src="/images/scholarship6.jpg"
-                                        alt="scholarship image"
-                                        width="100"
-                                        height="100"
-                                    />
+                                ) : scholarship.id === 20 ? (
+                                    <span>🇮🇹</span>
                                 ) : (
                                     <Skeleton />
                                 )}
@@ -71,7 +67,7 @@ export default async function Page() {
                         </ul>
                         {/* <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id} > Learn More </Link>
                         <Link href={`/scholarships/${scholarship.slug}`} id={scholarship.id}> Learn More </Link> */}
-                        <div className="overflow-scroll outline-violet-700 w-fit h-fit">
+                        <div className="overflow-hidden outline-violet-700 w-fit h-fit">
                             <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id}>
                                 <ReactMarkdown className="prose overflow-scroll max-h-52 max-w-52">
                                     {scholarship.description}
