@@ -2,7 +2,8 @@ import Link from "next/link";
 
 // TODO WHY DOES DOTENV NOT WORK 
 // const BASE_URL = process.env.STRAPI_URL || "http://localhost:1337"; // default to localhost if not provided
-const BASE_URL = "https://simply-scholars-821b524821cf.herokuapp.com" || "http://localhost:1337"; // default to localhost if not provided
+// const BASE_URL = "https://simply-scholars-821b524821cf.herokuapp.com" || "http://localhost:1337"; // default to localhost if not provided
+const BASE_URL = "http://127.0.0.1:1337"; // default to localhost if not provided
 
 export async function fetchDataStrapi(route) {
     const url = `${BASE_URL}/api/${route}`;
