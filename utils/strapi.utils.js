@@ -2,8 +2,8 @@ import Link from "next/link";
 
 // TODO WHY DOES DOTENV NOT WORK 
 // const BASE_URL = process.env.STRAPI_URL || "http://localhost:1337"; // default to localhost if not provided
-// const BASE_URL = "https://simply-scholars-821b524821cf.herokuapp.com" || "http://localhost:1337"; // default to localhost if not provided
-const BASE_URL = "http://127.0.0.1:1337"; // default to localhost if not provided
+const BASE_URL = "https://simply-scholars-821b524821cf.herokuapp.com" || "http://127.0.0.1:1337"; // default to localhost if not provided
+// const BASE_URL = "http://127.0.0.1:1337"; // default to localhost if not provided
 
 export async function fetchDataStrapi(route) {
     const url = `${BASE_URL}/api/${route}`;
@@ -48,8 +48,8 @@ export function processScholarship(data) {
         // description: dataBlock.attributes.description,
         value: dataBlock.attributes.value,
         // deadline: dataBlock.attributes.scholarshipContent[3].deadline,
-        eligibility: dataBlock.attributes.eligibility,
-        isActive: dataBlock.attributes.isActive,
+        // eligibility: dataBlock.attributes.eligibility,
+        // isActive: dataBlock.attributes.isActive,
         // // below is all thanks to Nick Fis, Strapi uploads the media to a different API endpoint
         // pic: BASE_URL + dataBlock.attributes?.pic?.data?.attributes?.url,
         // // publishedAt: item.publishedAt.toLocalString(),
@@ -81,25 +81,6 @@ export async function fetchOneScholarship(id) {
     }
 }
 
-// process one scholarship //
-// export function processOneScholarship(data) {
-//     // still need to populate DEEP for everything
-//     const rawData = data.attributes;
-//     return {
-//         ...rawData,
-//         ...data,
-//         title: rawData.title,
-//         id: data.id,
-//         description: rawData.description,
-//         value: rawData.value,
-//         deadline: rawData.deadline,
-//         isActive: rawData.isActive,
-//         eligibility: rawData.eligibility,
-//         pic: BASE_URL + rawData?.pic.data?.attributes?.url,
-//         publishedAt: rawData.publishedAt,
-//     };
-// }
-
 // formatting the date at which the scholarship was published //
 export function formatDate(dateStr) {
     const newDate = new Date(dateStr);
@@ -122,18 +103,35 @@ export async function fetchScholarships() {
 
 // ==================== //
 // NEEDED TO MAP OUT THE ARRAY NESTED INSIDE THE SCHOLARSHIP //
-export function processScholarshipContent(scholarship) {
-    // const rawData = scholarship.attributes["scholarshipContent"];
-    const rawData = scholarship.attributes["scholarshipContent"];
-    // console.log("rawData", rawData)
-    return rawData.map((dataBlock) => ({
-        ...scholarship,
-        // id: scholarship.id,
-        backgroundColor: dataBlock.backgroundColor,
-        description: dataBlock.description,
-        title: dataBlock.title,
-        deadline: dataBlock.deadline,
-        // pic: BASE_URL + data.attributes.pic?.data?.attributes?.url,
-        // publishedAt: item.publishedAt.toLocalString(),
-    }));
-}
+// export function processScholarshipContent(scholarship) {
+//     // const rawData = scholarship.attributes["scholarshipContent"];
+//     const rawData = scholarship;
+//     console.log("rawData", rawData)
+//     return rawData.map((dataBlock) => ({
+//         ...dataBlock.attributes,
+//         // id: scholarship.id,
+//         color: dataBlock.color,
+//         description: dataBlock.description,
+//         title: dataBlock.title,
+//         deadline: dataBlock.deadline,
+//         value: dataBlock.value,
+//         // pic: BASE_URL + data.attributes.pic?.data?.attributes?.url,
+//         // publishedAt: item.publishedAt.toLocalString(),
+//     }));
+// }
+// export function processScholarshipContent(scholarship) {
+//     // const rawData = scholarship.attributes["scholarshipContent"];
+//     const rawData = scholarship;
+//     console.log("rawData", rawData)
+//     return rawData.map((dataBlock) => ({
+//         ...dataBlock.attributes,
+//         // id: scholarship.id,
+//         color: dataBlock.color,
+//         description: dataBlock.description,
+//         title: dataBlock.title,
+//         deadline: dataBlock.deadline,
+//         value: dataBlock.value,
+//         // pic: BASE_URL + data.attributes.pic?.data?.attributes?.url,
+//         // publishedAt: item.publishedAt.toLocalString(),
+//     }));
+// }

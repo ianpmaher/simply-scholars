@@ -1,4 +1,4 @@
-const STRAPI_URL = "https://simply-scholars-821b524821cf.herokuapp.com/api/" || "http://localhost:1337/api/";
+const STRAPI_URL = "https://simply-scholars-821b524821cf.herokuapp.com/api/" || "http://127.0.0.1:1337/api/";
 
 export function getStrapiURL(route = "") {
     return `${STRAPI_URL}${route}`;

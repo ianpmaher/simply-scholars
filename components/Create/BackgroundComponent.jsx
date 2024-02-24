@@ -2,8 +2,9 @@ import Button from "../Button";
 
 const BackgroundComponent = ({ component, children }) => {
 
-    const hex = component.backgroundColor;
-
+    // const hex = component.color;
+    const hex = "#f0f0f0";
+    console.log(hex)
     const StyledButton = ({ children }) => {
         return (
             hex ? <Button

@@ -31,10 +31,10 @@ export default async function Page() {
                         <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id}>
                             <div className="flex flex-row justify-center items-center">
                                 {scholarship.id === 1 ? (
-                                    <Image src="/assets/dar.jpg" alt="scholarship image" width="100" height="100" />
-                                ) : scholarship.id === 2 ? (
+                                    <Image src="/assets/luna.avif" alt="scholarship image" width="100" height="100" />
+                                ) : scholarship.id === 4 ? (
                                     <Image src="/assets/afl.png" alt="scholarship image" width="100" height="100" />
-                                ) : scholarship.id === 8 ? (
+                                ) : scholarship.id === 2 ? (
                                     <Image
                                         src="/assets/react_native.png"
                                         alt="scholarship image"
