@@ -5,7 +5,6 @@ import { formatDate } from "@/utils/strapi.utils";
 import Link from "next/link";
 import Image from "next/image";
 import Skeleton from "@/components/Skeleton";
-import ScholarshipList from "./ScholarshipList";
 import { Links } from "@/components/Links";
 import Button from "@/components/Button";
 import indexPic from "./indexPic";
@@ -19,7 +18,6 @@ export default async function Page() {
     return (
         <main className="flex flex-col justify-center items-center py-2">
             {/* GRID LAYOUT */}
-            <ScholarshipList scholarships={processedScholarships} />
             {/* grid container */}
             <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-3">
                 {processedScholarships.map((scholarship, index) => (

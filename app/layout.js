@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className={karla.className}>
                 <div className="min-h-screen bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900">
-                    <Header className="w-[50vw] rounded-md flex my-0 mx-auto justify-center content-center items-center bg-gradient-to-br from-custom-turquoise from-10% via-custom-skyblue via-20% to-custom-green to-80%" />
+                    <Header className="w-[50vw] rounded-xl flex my-0 mx-auto justify-center content-center items-center" />
                     <div className="flex flex-1 flex-col sm:flex-row">
                         <Navbar className="sm:w-30 xs:w-20 order-first flex md:flex-col xs:flex-row justify-start items-center bg-[rgba(0,0,0,0.3)] rounded-xl" />
                         <main className="flex-1">{children}</main>

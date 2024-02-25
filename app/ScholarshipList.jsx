@@ -1,13 +1,19 @@
 import Link from "next/link";
 import { Josefin_Sans } from "next/font/google";
 import { formatDate } from "@/utils/strapi.utils";
+import { fetchDataStrapi } from "@/utils/strapi.utils";
+import { processScholarship } from "@/utils/strapi.utils";
 
-export default function ScholarshipList({ scholarships }) {
+export default async function ScholarshipList({ className }) {
+
+    const allScholarships = await fetchDataStrapi("scholarships?populate=deep");
+    const processedScholarships = processScholarship(allScholarships);
+
     return (
-        <div className="bg-red-400 py-1 px-3 text-center rounded-lg">
+        <div className="bg-red-400 text-center rounded-lg absolute right-0">
             <h1 className=" text-xl font-semibold italic font-[Inter]">Scholarships</h1>
             <ul>
-                {scholarships.map((scholarship) => (
+                {processedScholarships.map((scholarship) => (
                     <Link
                         key={scholarship.id}
                         href={`/scholarships/${scholarship.id}`}
