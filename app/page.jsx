@@ -8,6 +8,7 @@ import Skeleton from "@/components/Skeleton";
 import { Links } from "@/components/Links";
 import Button from "@/components/Button";
 import indexPic from "./indexPic";
+import fakeScholarships from "@/utils/fakeapi";
 
 export default async function Page() {
     // const allScholarships = await fetchAllScholarships();
@@ -20,6 +21,7 @@ export default async function Page() {
             {/* GRID LAYOUT */}
             {/* grid container */}
             <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-3">
+                {/* {processedScholarships.map((scholarship, index) => ( */}
                 {processedScholarships.map((scholarship, index) => (
                     <div
                         key={index}
@@ -41,9 +43,9 @@ export default async function Page() {
                                     />
                                 ) : scholarship.id === 7 ? (
                                     <Image src="/assets/luna.avif" alt="scholarship image" width="100" height="100" />
-                                ) : scholarship.id === 9 ? (
+                                ) : scholarship.id === 5 ? (
                                     <Image src="/assets/python.jpg" alt="scholarship image" width="100" height="100" />
-                                ) : scholarship.id === 20 ? (
+                                ) : scholarship.id === 9 ? (
                                     <span>🇮🇹</span>
                                 ) : (
                                     <Skeleton />

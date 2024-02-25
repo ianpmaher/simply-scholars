@@ -33,7 +33,7 @@ const fakeScholarships = {
             },
         },
         {
-            id: 2,
+            id: 3,
             attributes: {
                 title: "Python Scholarship 2025",
                 description:
@@ -49,7 +49,7 @@ const fakeScholarships = {
             },
         },
         {
-            id: 2,
+            id: 4,
             attributes: {
                 title: "AFL CIO Union Scholarship 2025",
                 description:

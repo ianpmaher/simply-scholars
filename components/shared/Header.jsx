@@ -6,7 +6,7 @@ import Link from "next/link";
 const Header = (props) => {
     return (
         <header className={props.className}>
-            <Link href="/" className="flex items-center bg-[rgba(255,255,255,0.5)] rounded-2xl px-5">
+            <Link href="/" className="flex items-center bg-[rgba(255,255,255,0.5)] rounded-2xl sm:px-5 my-1">
                 <Image src={"/assets/scholar.png"} alt="logo" width="90" height="99" />
                 <h1 className="text-2xl font-bold">Simply Scholars</h1>
             </Link>
