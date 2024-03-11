@@ -28,15 +28,15 @@ const ScholarshipBlock = (props) => {
             <div className="flex flex-row justify-center items-center">
                 {props.data.id === 1 ? (
                     <Image src="/assets/luna.avif" alt="scholarship image" width="100" height="100" />
-                ) : scholarship.id === 4 ? (
+                ) : props.data.id === 4 ? (
                     <Image src="/assets/afl.png" alt="scholarship image" width="100" height="100" />
-                ) : scholarship.id === 2 ? (
+                ) : props.data.id === 2 ? (
                     <Image src="/assets/react_native.png" alt="scholarship image" width="100" height="100" />
-                ) : scholarship.id === 7 ? (
+                ) : props.data.id === 7 ? (
                     <Image src="/assets/luna.avif" alt="scholarship image" width="100" height="100" />
-                ) : scholarship.id === 5 ? (
+                ) : props.data.id === 5 ? (
                     <Image src="/assets/python.jpg" alt="scholarship image" width="100" height="100" />
-                ) : scholarship.id === 9 ? (
+                ) : props.data.id === 9 ? (
                     <span>🇮🇹</span>
                 ) : (
                     <Skeleton />
