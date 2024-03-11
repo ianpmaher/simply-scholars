@@ -22,7 +22,7 @@ const BackgroundComponent = ({ component, children }) => {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center my-0 mx-auto p-5 cursor-pointer rounded-xl" style={{ backgroundColor: hex}}>
+        <div className="flex flex-col justify-center items-center my-0 mx-auto p-2 cursor-pointer rounded-xl" style={{ backgroundColor: hex}}>
             {children}
             <StyledButton>Apply Now</StyledButton>
         </div>

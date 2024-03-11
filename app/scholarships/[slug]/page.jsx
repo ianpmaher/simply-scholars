@@ -24,10 +24,13 @@ export default async function Page({ params }) {
     const slug = params.slug;
     console.log(params.slug);
 
-    const scholarshipIndv = fakeScholarships.data.find((scholarship) => scholarship.slug === slug);
+    // const scholarshipIndv = fakeScholarships.data.find((scholarship) => scholarship.slug === slug);
 
     // const scholarships = await fetchScholarships();
-    // const scholarshipIndv = await fetchOneScholarship(params.slug);
+    const scholarshipIndv = await fetchOneScholarship(params.slug);
+    console.log("scholarshipIndv", scholarshipIndv);
+    const processedOneScholarship = processOneScholarship(scholarshipIndv);
+    console.log("processedOneScholarship", processedOneScholarship);
     // const scholarshipKitten = processScholarship(scholarshipIndv);
     // console.log(scholarshipIndv);
     // const processedScholarshipThing = processScholarshipContent(scholarshipIndv);
@@ -38,17 +41,18 @@ export default async function Page({ params }) {
 
     return (
         <main className="flex flex-col justify-center items-center ">
-            
-            <BackgroundComponent component={scholarshipIndv}>
+            {/* <BackgroundComponent component={scholarshipIndv}>
                 
                 <ScholarshipComponent component={scholarshipIndv} />
-            </BackgroundComponent>
+            </BackgroundComponent> */}
 
             {/* <h1 className=" text-xl">
                 Title: <span className=" font-bold italic">{scholarshipIndv.attributes.title}</span>
             </h1> */}
-            
-            {/* <ScholarshipBlock data={scholarshipIndv} /> */}
+            <BackgroundComponent component={scholarshipIndv}>
+                <ScholarshipBlock data={scholarshipIndv} />
+            </BackgroundComponent>
+
             {/* <BackgroundComponent component={scholarshipIndv}>
                 <div className="flex flex-row justify-center items-center w-3/5">
                     {scholarshipIndv.id === 1 ? (

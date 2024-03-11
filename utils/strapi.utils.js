@@ -39,7 +39,7 @@ export async function fetchDataStrapi(route) {
 export function processScholarship(data) {
     // const rawData = data.attributes.scholarships.data;
     const rawData = data; // this is the new way
-
+    // console.log(rawData);
     return rawData.map((dataBlock) => ({
         ...dataBlock.attributes,
         // title: dataBlock.attributes.title,
@@ -79,6 +79,25 @@ export async function fetchOneScholarship(id) {
         console.error(`error: ${err}`);
         throw new Error(`Could not fetch ${url} ${err}`);
     }
+}
+
+export function processOneScholarship(data) {
+    // console.log("data", data);
+    const dataBlock = data
+    return {
+        ...data.attributes,
+        // title: data.attributes.title,
+        title: dataBlock.attributes.title,
+        id: dataBlock.id,
+        // description: data.attributes.description,
+        value: dataBlock.attributes.value,
+        // deadline: data.attributes.scholarshipContent[3].deadline,
+        // eligibility: data.attributes.eligibility,
+        // isActive: data.attributes.isActive,
+        // // below is all thanks to Nick Fis, Strapi uploads the media to a different API endpoint
+        // pic: BASE_URL + data.attributes?.pic?.data?.attributes?.url,
+        // // publishedAt: item.publishedAt.toLocalString(),
+    };
 }
 
 // formatting the date at which the scholarship was published //
