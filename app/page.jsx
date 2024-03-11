@@ -61,7 +61,7 @@ export default async function Page() {
                             )}
                         </div> */}
                         <ul className="list-none">
-                            {scholarship.value && <li>$ {scholarship.value}</li>}
+                            {scholarship.value && <li className=" font-bold text-lg">$ {scholarship.value}</li>}
                             {scholarship.deadline && <li>Deadline: {formatDate(scholarship.deadline)}</li>}
                             {scholarship.eligibility && <li>Type: {scholarship.eligibility}</li>}
                         </ul>
@@ -69,7 +69,7 @@ export default async function Page() {
                         <Link href={`/scholarships/${scholarship.slug}`} id={scholarship.id}> Learn More </Link> */}
                         <div className="overflow-hidden outline-violet-700 w-fit h-fit">
                             <Link href={`/scholarships/${scholarship.id}`} id={scholarship.id}>
-                                <ReactMarkdown className="prose overflow-scroll max-h-52 max-w-52">
+                                <ReactMarkdown className="prose overflow-scroll rounded-md max-h-52 max-w-52 border border-slate-600 bg-[rgba(100,218,181,1)]">
                                     {scholarship.description}
                                 </ReactMarkdown>
                             </Link>
